@@ -1,11 +1,14 @@
-document.getElementById('cta-button').addEventListener('click', function() {
-    alert('Merci! Nous vous contacterons bientôt pour discuter de votre projet.');
-  });
-  
-  const contactForm = document.querySelector('.contact-form');
-  
-  contactForm.addEventListener('submit', function(e) {
+AOS.init({
+    duration: 1200,
+});
+
+document.getElementById('cta-button').addEventListener('click', function () {
+    alert("Merci d'entrer en contact avec nous en envoyant un email à l'adresse contact@chella.tech");
+});
+
+const contactForm = document.querySelector('.contact-form');
+
+contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    alert('Merci! Votre message a été envoyé. Nous vous répondrons dans les plus brefs délais.');
-  });
-  
+    alert("Merci de nous envoyer votre demande à l'adresse contact@chella.tech");
+});

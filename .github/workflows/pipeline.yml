@@ -1,0 +1,27 @@
+name: CI/CD Pipeline
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Clone Ansible playbook repository
+        uses: actions/checkout@v3
+        with:
+          repository: pitchopp/vps-playbooks
+          path: ${{ github.workspace }}/vps-playbooks
+          ref: main
+
+      - name: Run ansible playbook
+        run: |
+          cd ${{ github.workspace }}/vps-playbooks
+          pip install .
+          echo "${{ secrets.SSH_KEY }}" > ssh_key
+          chmod 600 ssh_key
+          ansible-galaxy install -r requirements.yml
+          ansible-playbook playbooks/gpt_assistant.yml --private-key ssh_key
