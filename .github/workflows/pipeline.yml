@@ -25,4 +25,4 @@ jobs:
           chmod 600 ssh_key
           echo "${{ secrets.VAULT_PASS }}" > .vaultpass
           ansible-galaxy install -r requirements.yml
-          ansible-playbook playbooks/gpt_assistant.yml --private-key ssh_key
+          ansible-playbook playbooks/chella_tech.yml --private-key ssh_key
