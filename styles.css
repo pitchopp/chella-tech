@@ -76,24 +76,24 @@ nav ul li a:hover {
     background-position: center;
 }
 
-#about {
-    background-image: url('img/about.jpg');
+.section-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#services {
-    background-image: url('img/services.jpg');
+.text-content {
+    flex: 1;
+    margin-right: 20px;
 }
 
-#contact {
-    background-image: url('img/contact.jpg');
+.img-content {
+    flex: 1;
+    margin-left: 20px;
 }
 
-/* Ajoutez ce CSS pour rendre le texte plus lisible sur les images */
-.about-info,
-.services-info,
-.contact-form {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+.img-content img {
+    max-width: 100%;
     border-radius: 5px;
 }
 
